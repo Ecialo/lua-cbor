@@ -143,7 +143,10 @@ function encoder.number(num)
 end
 
 -- Major types 0, 1
-function encoder.integer(num)
+function encoder.integer(num, m)
+	if m ~= nil then
+		return integer(num, m);
+	end
 	if num < 0 then
 		return integer(-1 - num, 32);
 	end
